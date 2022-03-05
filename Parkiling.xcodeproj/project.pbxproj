@@ -13,6 +13,11 @@
 		D51F642427D26232008E555F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D51F642327D26232008E555F /* Preview Assets.xcassets */; };
 		D51F642627D26232008E555F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F642527D26232008E555F /* Persistence.swift */; };
 		D51F642927D26232008E555F /* Parkiling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D51F642727D26232008E555F /* Parkiling.xcdatamodeld */; };
+		D51F643A27D267AD008E555F /* ParkingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F643927D267AD008E555F /* ParkingView.swift */; };
+		D51F643C27D267CD008E555F /* ParkilingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F643B27D267CD008E555F /* ParkilingButtonStyle.swift */; };
+		D51F643E27D288CF008E555F /* ParkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F643D27D288CF008E555F /* ParkingViewModel.swift */; };
+		D51F644027D30116008E555F /* ViewSizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F643F27D30116008E555F /* ViewSizeReader.swift */; };
+		D51F644227D3050C008E555F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F644127D3050C008E555F /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		D51F642327D26232008E555F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D51F642527D26232008E555F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D51F642827D26232008E555F /* Parkiling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Parkiling.xcdatamodel; sourceTree = "<group>"; };
+		D51F643927D267AD008E555F /* ParkingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingView.swift; sourceTree = "<group>"; };
+		D51F643B27D267CD008E555F /* ParkilingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkilingButtonStyle.swift; sourceTree = "<group>"; };
+		D51F643D27D288CF008E555F /* ParkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingViewModel.swift; sourceTree = "<group>"; };
+		D51F643F27D30116008E555F /* ViewSizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSizeReader.swift; sourceTree = "<group>"; };
+		D51F644127D3050C008E555F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +66,9 @@
 			isa = PBXGroup;
 			children = (
 				D51F641C27D26231008E555F /* ParkilingApp.swift */,
-				D51F641E27D26231008E555F /* ContentView.swift */,
+				D51F643027D26267008E555F /* Vendor */,
+				D51F642F27D2625D008E555F /* Module */,
 				D51F642027D26232008E555F /* Assets.xcassets */,
-				D51F642527D26232008E555F /* Persistence.swift */,
-				D51F642727D26232008E555F /* Parkiling.xcdatamodeld */,
 				D51F642227D26232008E555F /* Preview Content */,
 			);
 			path = Parkiling;
@@ -71,6 +80,92 @@
 				D51F642327D26232008E555F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D51F642F27D2625D008E555F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				D51F643627D26751008E555F /* 1 - Parking Page */,
+				D51F641E27D26231008E555F /* ContentView.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		D51F643027D26267008E555F /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				D51F643427D26296008E555F /* Extension */,
+				D51F643327D2628E008E555F /* Utility */,
+				D51F643227D2628A008E555F /* Style */,
+				D51F643127D26285008E555F /* Model */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		D51F643127D26285008E555F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D51F643527D262A1008E555F /* Core Data */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D51F643227D2628A008E555F /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				D51F643B27D267CD008E555F /* ParkilingButtonStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		D51F643327D2628E008E555F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				D51F643F27D30116008E555F /* ViewSizeReader.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		D51F643427D26296008E555F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D51F644127D3050C008E555F /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D51F643527D262A1008E555F /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				D51F642527D26232008E555F /* Persistence.swift */,
+				D51F642727D26232008E555F /* Parkiling.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		D51F643627D26751008E555F /* 1 - Parking Page */ = {
+			isa = PBXGroup;
+			children = (
+				D51F643727D26774008E555F /* 1.1 - Main */,
+				D51F643827D26789008E555F /* 1.2 - Park my Vehicle */,
+			);
+			path = "1 - Parking Page";
+			sourceTree = "<group>";
+		};
+		D51F643727D26774008E555F /* 1.1 - Main */ = {
+			isa = PBXGroup;
+			children = (
+				D51F643927D267AD008E555F /* ParkingView.swift */,
+				D51F643D27D288CF008E555F /* ParkingViewModel.swift */,
+			);
+			path = "1.1 - Main";
+			sourceTree = "<group>";
+		};
+		D51F643827D26789008E555F /* 1.2 - Park my Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "1.2 - Park my Vehicle";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D51F644227D3050C008E555F /* Extension.swift in Sources */,
+				D51F644027D30116008E555F /* ViewSizeReader.swift in Sources */,
 				D51F642627D26232008E555F /* Persistence.swift in Sources */,
 				D51F641F27D26231008E555F /* ContentView.swift in Sources */,
 				D51F641D27D26231008E555F /* ParkilingApp.swift in Sources */,
+				D51F643C27D267CD008E555F /* ParkilingButtonStyle.swift in Sources */,
+				D51F643A27D267AD008E555F /* ParkingView.swift in Sources */,
 				D51F642927D26232008E555F /* Parkiling.xcdatamodeld in Sources */,
+				D51F643E27D288CF008E555F /* ParkingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -259,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -280,6 +380,7 @@
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,6 +410,7 @@
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
