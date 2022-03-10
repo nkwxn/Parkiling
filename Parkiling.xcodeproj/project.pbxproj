@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D503C85227D4F986001F0D72 /* MapLocationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503C85127D4F986001F0D72 /* MapLocationUtility.swift */; };
+		D503C85527D4FCBB001F0D72 /* ParkingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503C85427D4FCBB001F0D72 /* ParkingStatus.swift */; };
 		D51F641D27D26231008E555F /* ParkilingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F641C27D26231008E555F /* ParkilingApp.swift */; };
 		D51F641F27D26231008E555F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F641E27D26231008E555F /* ContentView.swift */; };
 		D51F642127D26232008E555F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D51F642027D26232008E555F /* Assets.xcassets */; };
@@ -17,10 +19,19 @@
 		D51F643C27D267CD008E555F /* ParkilingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F643B27D267CD008E555F /* ParkilingButtonStyle.swift */; };
 		D51F643E27D288CF008E555F /* ParkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F643D27D288CF008E555F /* ParkingViewModel.swift */; };
 		D51F644027D30116008E555F /* ViewSizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F643F27D30116008E555F /* ViewSizeReader.swift */; };
-		D51F644227D3050C008E555F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F644127D3050C008E555F /* Extension.swift */; };
+		D51F644227D3050C008E555F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F644127D3050C008E555F /* Color+Extension.swift */; };
+		D51F644A27D3554C008E555F /* ParkVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51F644927D3554C008E555F /* ParkVehicleView.swift */; };
+		D524383727D770280061F9F0 /* UDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D524383627D770280061F9F0 /* UDHelper.swift */; };
+		D524383A27D772000061F9F0 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D524383927D772000061F9F0 /* UserDefaults+Extensions.swift */; };
+		D558867A27D9F79100717DC2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D558867927D9F79100717DC2 /* ImagePicker.swift */; };
+		D558867D27DA007A00717DC2 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D558867C27DA007A00717DC2 /* CameraView.swift */; };
+		D558868027DA431D00717DC2 /* TextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D558867F27DA431D00717DC2 /* TextStackView.swift */; };
+		D58DD4CC27D3BA3C0034F9EF /* ParkVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58DD4CB27D3BA3C0034F9EF /* ParkVehicleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D503C85127D4F986001F0D72 /* MapLocationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationUtility.swift; sourceTree = "<group>"; };
+		D503C85427D4FCBB001F0D72 /* ParkingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingStatus.swift; sourceTree = "<group>"; };
 		D51F641927D26231008E555F /* Parkiling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parkiling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51F641C27D26231008E555F /* ParkilingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkilingApp.swift; sourceTree = "<group>"; };
 		D51F641E27D26231008E555F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,7 +43,16 @@
 		D51F643B27D267CD008E555F /* ParkilingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkilingButtonStyle.swift; sourceTree = "<group>"; };
 		D51F643D27D288CF008E555F /* ParkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingViewModel.swift; sourceTree = "<group>"; };
 		D51F643F27D30116008E555F /* ViewSizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSizeReader.swift; sourceTree = "<group>"; };
-		D51F644127D3050C008E555F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D51F644127D3050C008E555F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		D51F644927D3554C008E555F /* ParkVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkVehicleView.swift; sourceTree = "<group>"; };
+		D524383627D770280061F9F0 /* UDHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDHelper.swift; sourceTree = "<group>"; };
+		D524383827D770BA0061F9F0 /* Parkiling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Parkiling.entitlements; sourceTree = "<group>"; };
+		D524383927D772000061F9F0 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		D558867927D9F79100717DC2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D558867B27D9FE4200717DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D558867C27DA007A00717DC2 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D558867F27DA431D00717DC2 /* TextStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStackView.swift; sourceTree = "<group>"; };
+		D58DD4CB27D3BA3C0034F9EF /* ParkVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkVehicleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +66,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D503C85027D48051001F0D72 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D58DD4CB27D3BA3C0034F9EF /* ParkVehicleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D503C85327D4FC9B001F0D72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D51F644927D3554C008E555F /* ParkVehicleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D51F641027D26231008E555F = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +101,8 @@
 		D51F641B27D26231008E555F /* Parkiling */ = {
 			isa = PBXGroup;
 			children = (
+				D558867B27D9FE4200717DC2 /* Info.plist */,
+				D524383827D770BA0061F9F0 /* Parkiling.entitlements */,
 				D51F641C27D26231008E555F /* ParkilingApp.swift */,
 				D51F643027D26267008E555F /* Vendor */,
 				D51F642F27D2625D008E555F /* Module */,
@@ -105,7 +143,9 @@
 		D51F643127D26285008E555F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D524383527D76FE80061F9F0 /* User Defaults */,
 				D51F643527D262A1008E555F /* Core Data */,
+				D503C85427D4FCBB001F0D72 /* ParkingStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				D51F643F27D30116008E555F /* ViewSizeReader.swift */,
+				D503C85127D4F986001F0D72 /* MapLocationUtility.swift */,
+				D558867927D9F79100717DC2 /* ImagePicker.swift */,
+				D558867C27DA007A00717DC2 /* CameraView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -129,7 +172,7 @@
 		D51F643427D26296008E555F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D51F644127D3050C008E555F /* Extension.swift */,
+				D51F644127D3050C008E555F /* Color+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -155,8 +198,8 @@
 		D51F643727D26774008E555F /* 1.1 - Main */ = {
 			isa = PBXGroup;
 			children = (
-				D51F643927D267AD008E555F /* ParkingView.swift */,
-				D51F643D27D288CF008E555F /* ParkingViewModel.swift */,
+				D51F644527D32C93008E555F /* ViewModel */,
+				D51F644427D32C8F008E555F /* View */,
 			);
 			path = "1.1 - Main";
 			sourceTree = "<group>";
@@ -164,8 +207,44 @@
 		D51F643827D26789008E555F /* 1.2 - Park my Vehicle */ = {
 			isa = PBXGroup;
 			children = (
+				D503C85327D4FC9B001F0D72 /* View */,
+				D503C85027D48051001F0D72 /* ViewModel */,
 			);
 			path = "1.2 - Park my Vehicle";
+			sourceTree = "<group>";
+		};
+		D51F644427D32C8F008E555F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D558867E27DA42E700717DC2 /* Elements */,
+				D51F643927D267AD008E555F /* ParkingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D51F644527D32C93008E555F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D51F643D27D288CF008E555F /* ParkingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D524383527D76FE80061F9F0 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				D524383627D770280061F9F0 /* UDHelper.swift */,
+				D524383927D772000061F9F0 /* UserDefaults+Extensions.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
+		D558867E27DA42E700717DC2 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				D558867F27DA431D00717DC2 /* TextStackView.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,14 +317,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D51F644227D3050C008E555F /* Extension.swift in Sources */,
+				D558868027DA431D00717DC2 /* TextStackView.swift in Sources */,
+				D51F644227D3050C008E555F /* Color+Extension.swift in Sources */,
 				D51F644027D30116008E555F /* ViewSizeReader.swift in Sources */,
+				D524383727D770280061F9F0 /* UDHelper.swift in Sources */,
+				D51F644A27D3554C008E555F /* ParkVehicleView.swift in Sources */,
+				D58DD4CC27D3BA3C0034F9EF /* ParkVehicleViewModel.swift in Sources */,
+				D503C85227D4F986001F0D72 /* MapLocationUtility.swift in Sources */,
 				D51F642627D26232008E555F /* Persistence.swift in Sources */,
+				D503C85527D4FCBB001F0D72 /* ParkingStatus.swift in Sources */,
 				D51F641F27D26231008E555F /* ContentView.swift in Sources */,
 				D51F641D27D26231008E555F /* ParkilingApp.swift in Sources */,
 				D51F643C27D267CD008E555F /* ParkilingButtonStyle.swift in Sources */,
 				D51F643A27D267AD008E555F /* ParkingView.swift in Sources */,
+				D558867D27DA007A00717DC2 /* CameraView.swift in Sources */,
 				D51F642927D26232008E555F /* Parkiling.xcdatamodeld in Sources */,
+				D558867A27D9F79100717DC2 /* ImagePicker.swift in Sources */,
+				D524383A27D772000061F9F0 /* UserDefaults+Extensions.swift in Sources */,
 				D51F643E27D288CF008E555F /* ParkingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,13 +462,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Parkiling/Parkiling.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Parkiling/Preview Content\"";
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Parkiling/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to your camera to take a picture of your current parking lot";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to attach your images";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -404,13 +496,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Parkiling/Parkiling.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Parkiling/Preview Content\"";
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Parkiling/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to your camera to take a picture of your current parking lot";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to attach your images";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -16,6 +16,7 @@ struct ParkilingApp: App {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             ParkingView()
+                .font(.system(.body, design: .rounded))
         }
     }
 }

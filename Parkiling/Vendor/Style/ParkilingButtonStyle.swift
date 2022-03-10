@@ -54,6 +54,7 @@ struct ParkilingButtonStyle: PrimitiveButtonStyle {
     private let width: CGFloat?
     private let height: CGFloat?
     private let type: CustomButtonType
+    @GestureState private var pressed = false
     
     init(
         _ type: CustomButtonType,
@@ -66,7 +67,12 @@ struct ParkilingButtonStyle: PrimitiveButtonStyle {
     }
     
     func makeBody(configuration: Configuration) -> some View {
-        ZStack {
+        let tapGesture = LongPressGesture(minimumDuration: 300)
+            .updating($pressed) { bool, state, _ in
+                state = bool
+            }
+        
+        return ZStack {
             Capsule()
                 .strokeBorder(
                     type.getBorderColor(),
@@ -80,6 +86,15 @@ struct ParkilingButtonStyle: PrimitiveButtonStyle {
             .font(.system(.headline, design: .rounded))
         }
         .frame(width: width, height: height, alignment: .center)
+        .opacity(pressed ? 0.5 : 1.0)
+        .gesture(tapGesture)
+        .onChange(of: pressed) { newValue in
+            if !newValue {
+                DispatchQueue.main.async {
+                    configuration.trigger()
+                }
+            }
+        }
     }
 }
 
