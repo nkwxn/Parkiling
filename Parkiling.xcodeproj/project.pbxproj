@@ -49,7 +49,6 @@
 		D524383827D770BA0061F9F0 /* Parkiling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Parkiling.entitlements; sourceTree = "<group>"; };
 		D524383927D772000061F9F0 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		D558867927D9F79100717DC2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		D558867B27D9FE4200717DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D558867C27DA007A00717DC2 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D558867F27DA431D00717DC2 /* TextStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStackView.swift; sourceTree = "<group>"; };
 		D58DD4CB27D3BA3C0034F9EF /* ParkVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkVehicleViewModel.swift; sourceTree = "<group>"; };
@@ -101,7 +100,6 @@
 		D51F641B27D26231008E555F /* Parkiling */ = {
 			isa = PBXGroup;
 			children = (
-				D558867B27D9FE4200717DC2 /* Info.plist */,
 				D524383827D770BA0061F9F0 /* Parkiling.entitlements */,
 				D51F641C27D26231008E555F /* ParkilingApp.swift */,
 				D51F643027D26267008E555F /* Vendor */,
@@ -469,7 +467,7 @@
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Parkiling/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to your camera to take a picture of your current parking lot";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to attach your images";
@@ -503,7 +501,7 @@
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Parkiling/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to your camera to take a picture of your current parking lot";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to attach your images";

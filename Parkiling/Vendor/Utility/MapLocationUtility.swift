@@ -8,13 +8,14 @@
 import Foundation
 import CoreLocation
 import MapKit
+import Combine
 
-class MapLocationUtility: NSObject, ObservableObject, CLLocationManagerDelegate {
+class MapLocationUtility: NSObject, ObservableObject {
     // MapKit properties
     @Published var clLocation: CLLocation? = CLLocation() {
         didSet {
             region = MKCoordinateRegion(
-                center: clLocation!.coordinate,
+                center: clLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
                 latitudinalMeters: 700,
                 longitudinalMeters: 700
             )
@@ -28,10 +29,16 @@ class MapLocationUtility: NSObject, ObservableObject, CLLocationManagerDelegate 
     let locManager: CLLocationManager = {
         let locManager = CLLocationManager()
         locManager.desiredAccuracy = kCLLocationAccuracyBest
+        locManager.startUpdatingLocation()
         return locManager
     }()
     
     let geocoder = CLGeocoder()
+    
+    // Recently parked vehicle
+    @Published var parkingStatus: ParkingStatus?
+    var cancellable = Set<AnyCancellable>()
+    var parkingLocations = [ParkingStatus]()
     
     override init() {
         locManager.requestWhenInUseAuthorization()
@@ -54,15 +61,37 @@ class MapLocationUtility: NSObject, ObservableObject, CLLocationManagerDelegate 
             )
         }
         listLocation()
+        
+        if parkingStatus != nil {
+            setLocationCamera(at: parkingStatus)
+        }
+    }
+    
+    func setLocationCamera(at status: ParkingStatus?) {
+        if let status = status {
+            let coordinate = status.coordinate.locationCoordinate()
+            self.setLocationCoordinate(
+                for: CLLocation(
+                    latitude: coordinate.latitude,
+                    longitude: coordinate.longitude
+                )
+            )
+        } else {
+            self.setLocationCoordinate(using: self.locManager)
+        }
     }
     
     func setLocationCoordinate(for clLocation: CLLocation?) {
         self.clLocation = clLocation
         listLocation()
+        
+        if parkingStatus != nil {
+            setLocationCamera(at: parkingStatus)
+        }
     }
     
     func listLocation() {
-        geocoder.reverseGeocodeLocation(clLocation!) { placemarks, error in
+        geocoder.reverseGeocodeLocation(clLocation ?? CLLocation(latitude: 0.0, longitude: 0.0)) { placemarks, error in
             guard let placemarks = placemarks else {
                 if let error = error {
                     print(error.localizedDescription)
@@ -89,13 +118,23 @@ class MapLocationUtility: NSObject, ObservableObject, CLLocationManagerDelegate 
         print("Offsetted Coordinate: \(newCoordinate.coordinate)")
         clLocation = newCoordinate
     }
-    
+}
+
+extension MapLocationUtility: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
         case .denied, .restricted, .notDetermined:
             manager.requestWhenInUseAuthorization()
         default:
             setLocationCoordinate(using: manager)
+        }
+    }
+    
+    // when location is updating, should be
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
+        if let location = manager.location {
+            setLocationCoordinate(for: location)
         }
     }
 }

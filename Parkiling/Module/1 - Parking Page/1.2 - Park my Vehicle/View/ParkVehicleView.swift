@@ -14,6 +14,10 @@ struct ParkVehicleView: View {
     @StateObject var viewModel = ParkVehicleViewModel()
     @Binding var status: ParkingStatus?
     
+    init(status: Binding<ParkingStatus?>) {
+        self._status = status
+    }
+    
     var body: some View {
         NavigationView {
             List {
@@ -21,13 +25,19 @@ struct ParkVehicleView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Map(
                             coordinateRegion: $viewModel.region,
-                            showsUserLocation: true
-                        )
+                            showsUserLocation: status == nil,
+                            annotationItems: viewModel.parkingLocations
+                        ) { parking in
+                            MapMarker(
+                                coordinate: parking.coordinate.locationCoordinate(),
+                                tint: Color.accentColor
+                            )
+                        }
                             .frame(width: nil, height: 200)
                         HStack(spacing: 8) {
                             Image(systemName: "mappin.and.ellipse")
                                 .font(.system(size: 24, weight: .regular, design: .rounded))
-                            Text(viewModel.locName)
+                            Text(status == nil ? viewModel.locName : status!.parkingLocation)
                                 .lineLimit(3)
                         }
                     }

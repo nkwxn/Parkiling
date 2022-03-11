@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import MapKit
+import Combine
 
 class ParkVehicleViewModel: MapLocationUtility {
     // For text fields
@@ -22,13 +23,14 @@ class ParkVehicleViewModel: MapLocationUtility {
     @Published var showCameraView = false
     @Published var showImageDeletePrompt = false
     
-    var parkingStatus: ParkingStatus? {
+    override var parkingStatus: ParkingStatus? {
         didSet {
             if let parkingStatus = parkingStatus {
                 self.lotNumber = parkingStatus.lotNumber
                 self.level = parkingStatus.floorNumber
                 self.moreInfo = parkingStatus.additionals
                 self.chosenImage = parkingStatus.imageData == nil ? nil : UIImage(data: parkingStatus.imageData!)
+                self.region = MKCoordinateRegion(center: parkingStatus.coordinate.locationCoordinate(), latitudinalMeters: 750, longitudinalMeters: 750)
             }
         }
     }
@@ -36,12 +38,21 @@ class ParkVehicleViewModel: MapLocationUtility {
     override init() {
         super.init()
         self.parkingStatus = nil
-    }
-    
-    // Init view for updating status
-    init(status: ParkingStatus?) {
-        super.init()
-        self.parkingStatus = status
+        
+        UDHelper.shared.subsParking { [weak self] parkingStatus in
+            if let parkingStatus = parkingStatus {
+                self?.parkingStatus = parkingStatus
+                self?.parkingLocations.append(parkingStatus)
+                self?.setLocationCoordinate(using: self!.locManager)
+                let coordinate = parkingStatus.coordinate.locationCoordinate()
+                self?.setLocationCoordinate(
+                    for: CLLocation(
+                        latitude: coordinate.latitude,
+                        longitude: coordinate.longitude
+                    )
+                )
+            }
+        }.store(in: &cancellable)
     }
     
     // To set the parking ID when it is not nil

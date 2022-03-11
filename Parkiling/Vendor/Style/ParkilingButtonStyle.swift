@@ -72,21 +72,22 @@ struct ParkilingButtonStyle: PrimitiveButtonStyle {
                 state = bool
             }
         
-        return ZStack {
+        return HStack {
+            configuration.label
+        }
+        .padding()
+        .font(.system(.headline, design: .rounded))
+        .frame(width: width, height: height, alignment: .center)
+        .opacity(pressed ? 0.5 : 1.0)
+        .foregroundColor(type.getTextColor())
+        .background(
             Capsule()
                 .strokeBorder(
                     type.getBorderColor(),
                     lineWidth: 4
                 )
                 .background(Capsule().foregroundColor(type.getBackgroundColor()))
-            HStack {
-                configuration.label
-            }
-            .foregroundColor(type.getTextColor())
-            .font(.system(.headline, design: .rounded))
-        }
-        .frame(width: width, height: height, alignment: .center)
-        .opacity(pressed ? 0.5 : 1.0)
+        )
         .gesture(tapGesture)
         .onChange(of: pressed) { newValue in
             if !newValue {

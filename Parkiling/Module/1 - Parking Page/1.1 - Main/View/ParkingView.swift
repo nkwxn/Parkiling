@@ -31,18 +31,28 @@ struct ParkingView: View {
                     )
                 }
                 VStack(alignment: .leading, spacing: 8) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(viewModel.parkingStatus == nil ? "Current Location" : "Parked Since \(viewModel.parkingStatus!.getFormattedDate(for: .startDate)) on")
-                            .font(.system(.caption, design: .rounded))
-                            .textCase(.uppercase)
-                            .foregroundColor(.secondary)
-                        HStack {
-                            Image(systemName: "mappin.and.ellipse")
-                                .font(.system(size: 24, weight: .regular, design: .rounded))
-                            Text(viewModel.parkingStatus == nil ? viewModel.locName : viewModel.parkingStatus!.parkingLocation)
-                                .lineLimit(3)
+                    HStack {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(viewModel.parkingStatus == nil ? "Current Location" : "Parked Since \(viewModel.parkingStatus!.getFormattedDate(for: .startDate)) on")
+                                .font(.system(.caption, design: .rounded))
+                                .textCase(.uppercase)
+                                .foregroundColor(.secondary)
+                            HStack {
+                                Image(systemName: "mappin.and.ellipse")
+                                    .font(.system(size: 24, weight: .regular, design: .rounded))
+                                Text(viewModel.parkingStatus == nil ? viewModel.locName : viewModel.parkingStatus!.parkingLocation)
+                                    .lineLimit(3)
+                            }
+                            .background(Color.primarySystemBackground)
                         }
-                        .background(Color.primarySystemBackground)
+                        if viewModel.parkingStatus != nil && viewModel.showParkingDetails {
+                            Spacer()
+                            Button("Edit") {
+                                // Show edit modal (same view but different)
+                                viewModel.showNewParking.toggle()
+                            }
+                            .buttonStyle(ParkilingButtonStyle(.secondary))
+                        }
                     }
                     
                     // Container for the parking area details
@@ -86,7 +96,7 @@ struct ParkingView: View {
                                     Image(uiImage: UIImage(data: image)!)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(height: 240)
+                                        .frame(height: 200)
                                         .clipShape(Rectangle())
                                 }
                             }
@@ -96,9 +106,12 @@ struct ParkingView: View {
                     
                     // Should change to 2 buttons when on parking state
                     if viewModel.parkingStatus == nil {
-                        Button("Park My Vehicle") {
+                        Button {
                             // Open modal
                             viewModel.showNewParking.toggle()
+                        } label: {
+                            Text("Park my Vehicle")
+                                .frame(maxWidth: .infinity)
                         }
                         .buttonStyle(ParkilingButtonStyle(.primary))
                     } else {
@@ -109,10 +122,12 @@ struct ParkingView: View {
                                 }
                             }
                             .buttonStyle(ParkilingButtonStyle(.secondary))
-                            .frame(width: 150)
-                            Button("I'm Leaving Soon") {
+                            Button {
                                 // Show prompt
                                 viewModel.showLeavingPrompt.toggle()
+                            } label: {
+                                Text("I'm Leaving Soon")
+                                    .frame(maxWidth: .infinity)
                             }
                             .buttonStyle(ParkilingButtonStyle(.primary))
                         }
@@ -128,16 +143,6 @@ struct ParkingView: View {
             .transition(.scale)
             .navigationTitle("Parking")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if viewModel.parkingStatus != nil && viewModel.showParkingDetails {
-                        Button("Edit") {
-                            // Show edit modal (same view but different)
-                            viewModel.showNewParking.toggle()
-                        }
-                    }
-                }
-            }
             .sheet(isPresented: $viewModel.showNewParking) {
                 // Dismissal Function
             } content: {
@@ -155,7 +160,7 @@ struct ParkingView: View {
         }
         .onChange(of: viewModel.showParkingDetails) { newValue in
             // should change the map value
-            viewModel.setLocationCamera()
+            viewModel.setLocationCamera(at: viewModel.parkingStatus)
         }
     }
 }

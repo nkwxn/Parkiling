@@ -22,12 +22,6 @@ class ParkingViewModel: MapLocationUtility {
     @Published var showParkingDetails = false
     @Published var showLeavingPrompt = false
     
-    // Recently parked vehicle
-    @Published var parkingStatus: ParkingStatus?
-    var cancellable = Set<AnyCancellable>()
-    
-    var parkingLocations = [ParkingStatus]()
-    
     override init() {
         super.init()
         
@@ -50,10 +44,10 @@ class ParkingViewModel: MapLocationUtility {
                 )
             }
             
-            self?.setLocationCamera()
+            self?.setLocationCamera(at: self?.parkingStatus)
         }.store(in: &cancellable)
         
-        self.setLocationCamera()
+        self.setLocationCamera(at: parkingStatus)
     }
     
     func leaveParkingLot() {
@@ -63,21 +57,7 @@ class ParkingViewModel: MapLocationUtility {
     override func setLocationCoordinate(using locationMgr: CLLocationManager) {
         super.setLocationCoordinate(using: locationMgr)
         if parkingStatus != nil {
-            setLocationCamera()
-        }
-    }
-    
-    func setLocationCamera() {
-        if let status = parkingStatus {
-            let coordinate = status.coordinate.locationCoordinate()
-            self.setLocationCoordinate(
-                for: CLLocation(
-                    latitude: coordinate.latitude,
-                    longitude: coordinate.longitude
-                )
-            )
-        } else {
-            self.setLocationCoordinate(using: self.locManager)
+            setLocationCamera(at: parkingStatus)
         }
     }
 }
