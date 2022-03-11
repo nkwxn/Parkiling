@@ -37,11 +37,16 @@ struct ParkingView: View {
                                 .font(.system(.caption, design: .rounded))
                                 .textCase(.uppercase)
                                 .foregroundColor(.secondary)
-                            HStack {
+                            HStack(spacing: 8) {
                                 Image(systemName: "mappin.and.ellipse")
                                     .font(.system(size: 24, weight: .regular, design: .rounded))
-                                Text(viewModel.parkingStatus == nil ? viewModel.locName : viewModel.parkingStatus!.parkingLocation)
-                                    .lineLimit(3)
+                                if viewModel.locName.isEmpty && viewModel.parkingStatus == nil {
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle())
+                                } else {
+                                    Text(viewModel.parkingStatus == nil ? viewModel.locName : viewModel.parkingStatus!.parkingLocation)
+                                        .lineLimit(3)
+                                }
                             }
                             .background(Color.primarySystemBackground)
                         }

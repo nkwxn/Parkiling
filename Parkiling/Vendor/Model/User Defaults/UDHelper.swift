@@ -16,6 +16,7 @@ class UDHelper {
     static let shared = UDHelper()
     
     let defaults = UserDefaults(suiteName: "group.com.nkwxn.Parkiling") ?? UserDefaults.standard
+//    let defaults = UserDefaults.standard
     
     func setParking(with data: ParkingStatus?) {
         defaults.parkingStatus = data

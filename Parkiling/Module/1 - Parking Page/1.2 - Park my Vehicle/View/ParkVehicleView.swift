@@ -37,8 +37,14 @@ struct ParkVehicleView: View {
                         HStack(spacing: 8) {
                             Image(systemName: "mappin.and.ellipse")
                                 .font(.system(size: 24, weight: .regular, design: .rounded))
-                            Text(status == nil ? viewModel.locName : status!.parkingLocation)
-                                .lineLimit(3)
+                            
+                            if viewModel.locName.isEmpty && viewModel.parkingStatus == nil {
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle())
+                            } else {
+                                Text(status == nil ? viewModel.locName : status!.parkingLocation)
+                                    .lineLimit(3)
+                            }
                         }
                     }
                     .padding(.bottom, 14)

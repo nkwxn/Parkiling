@@ -62,9 +62,18 @@ class MapLocationUtility: NSObject, ObservableObject {
         }
         listLocation()
         
-        if parkingStatus != nil {
-            setLocationCamera(at: parkingStatus)
-        }
+//        if parkingStatus != nil {
+//            setLocationCamera(at: parkingStatus)
+//        }
+    }
+    
+    func setLocationCoordinate(for clLocation: CLLocation?) {
+        self.clLocation = clLocation
+        listLocation()
+        
+//        if parkingStatus != nil {
+//            setLocationCamera(at: parkingStatus)
+//        }
     }
     
     func setLocationCamera(at status: ParkingStatus?) {
@@ -78,15 +87,6 @@ class MapLocationUtility: NSObject, ObservableObject {
             )
         } else {
             self.setLocationCoordinate(using: self.locManager)
-        }
-    }
-    
-    func setLocationCoordinate(for clLocation: CLLocation?) {
-        self.clLocation = clLocation
-        listLocation()
-        
-        if parkingStatus != nil {
-            setLocationCamera(at: parkingStatus)
         }
     }
     
