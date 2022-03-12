@@ -471,9 +471,9 @@
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to your camera to take a picture of your current parking lot";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to attach your images";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Parkiling needs access to your camera to take a picture of your current parking lot for image attachment.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Turning on location allows us to get the information of your current location and use it to remind you where you parked your vehicle.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Parkiling needs access to your photo library to attach an image to your parking status.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -504,9 +504,9 @@
 				DEVELOPMENT_TEAM = SCZQ3M4JVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to your camera to take a picture of your current parking lot";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library to attach your images";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Parkiling needs access to your camera to take a picture of your current parking lot for image attachment.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Turning on location allows us to get the information of your current location and use it to remind you where you parked your vehicle.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Parkiling needs access to your photo library to attach an image to your parking status.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
